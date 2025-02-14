@@ -1,0 +1,6 @@
+# Ignorar el archivo .env
+.env
+
+back/node_modules/
+
+
