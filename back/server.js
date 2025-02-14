@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const commentsRoutes = require('./routes/commentsRoutes');
-
+const pool = require('./config/db');
 const app = express();
 
 // Middlewares
