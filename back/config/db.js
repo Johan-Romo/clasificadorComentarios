@@ -3,15 +3,12 @@ require('dotenv').config();
 
 // Configura la conexión individualmente
 const pool = new Pool({
-  user: process.env.PGUSER,
-  password: process.env.PGPASSWORD,
-  host: process.env.PGHOST,
-  database: process.env.PGDATABASE,
-  port: process.env.PGPORT,
-  ssl: {
-    rejectUnauthorized: false,
-  },
-});
+    // Usa la variable de entorno inyectada por Railway
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+      rejectUnauthorized: false,
+    },
+  });
 
 // Aquí hacemos un test de conexión inmediato:
 pool.connect()
